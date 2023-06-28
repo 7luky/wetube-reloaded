@@ -1,0 +1,17 @@
+extends base
+
+block content
+  if errorMessage
+    span=errorMessage
+  form(method="POST")
+    input(placeholder="name", name="name", type="text", required)
+    input(placeholder="email", name="email", type="text", required) 
+    input(placeholder="username", name="username", type="text", required) 
+    input(placeholder="password", name="password", type="password", required) 
+    input(placeholder="Confirm Password", name="password2", type="password", required) 
+    input(placeholder="location", name="location", type="text", required)
+    input(placeholder="submit", type="submit", value="가입")
+    include partials/social-login
+  div.auth-switch
+    span Already have and account? 
+    a(href="/login") Log In Now &rarr; 

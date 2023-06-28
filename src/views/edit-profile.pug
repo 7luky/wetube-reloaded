@@ -1,0 +1,15 @@
+extends base.pug
+
+
+block content 
+  form(method="POST", enctype="multipart/form-data").edit-profile__form
+    label(for="avatar") Avatar 
+    input(type="file", id="avatar", name="avatar", accept="image/*")
+    input(placeholder="name", name="name", type="text", required, value=loggedInUser.name)
+    input(placeholder="email", name="email", type="text", required, value=loggedInUser.email) 
+    input(placeholder="username", name="username", type="text", required, value=loggedInUser.username) 
+    input(placeholder="location", name="location", type="text", required, value=loggedInUser.location)
+    input(placeholder="submit", type="submit", value="프로필 업데이트")
+    if !loggedInUser.socialOnly
+      div.edit-profile__password
+        a(href="change-password") Change Password &rarr;

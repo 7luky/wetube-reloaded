@@ -1,0 +1,20 @@
+mixin video(video)
+  a(href=`/videos/${video._id}`).video-mixin
+    div.video-mixin__thumb
+    div.video-mixin__data
+      span.video-mixin__title=video.title
+      div.video-mixin__meta
+        span #{video.owner.username || user.name} · 
+        span #{video.meta.views}회
+        
+    //- a(href=`/videos/${video._id}`)=video.title
+    //- p=video.description
+    //- small=video.createdAt
+
+
+    //- ul
+    //-   li #{video.meta.views} views.
+    //-   li #{video.meta.rating} / 5
+    //-   li #{video.comments} comments.
+    //-   li Posted #{video.createdAt}
+    //-   li #{video.hashtags} 
